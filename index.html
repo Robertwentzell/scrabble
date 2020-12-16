@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<!--
+homework 8, scrabble
+Robert Wentzell, UMass Lowell Computer Science, rwentzel@cs.uml.edu
+Copyright (c) 2020 by Robert Wentzell. All rights reserved. May be
+freely
+copied or excerpted for educational purposes with credit to the
+author.
+updated by Robert Wentzell 12/15/2020
+-->
+
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/assignment8.css">
+
+</head>
+<body>
+    <!-- First row - Scrabble -->
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="name">
+          <span class="highlight_title">SCRABBLE</span>
+        </h1>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4"></div>
+    </div>
+    <br>
+
+    <!-- game board -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="center_text_images">
+          <img class="resize_board" id="the_board" src="img/graphics_data/Scrabble_Board_OneLine.png">
+          <div id="board"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="highlight_centered">Current Word: <span id="word"></span> </div>
+        <div class="highlight_centered">Score: <span id="score">0</span> </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="center_text_images">
+            <!-- buttons but they suck and dont really work so--> 
+            <div id="button">
+                <button onclick="continuePlaying()" >
+                    Submit word
+                </button>
+                <button onClick="newTiles()" >
+                    refresh tiles
+                </button>
+                <button onClick="newGame()" >
+                    New game
+                </button>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="center_text_images">
+          <img class="resize_rack" id="the_rack" src="img/graphics_data/scrabble-tile-holder-406774_640.png">
+          <div id="rack"></div>
+        </div>
+          <div id="text">
+              <div id="score">0</div>
+              <div id="word"></div>
+              <div id="messages"></div>
+              <div id="totalscore"></div>
+          </div>
+
+      </div>
+    </div>
+
+  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+  <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.js"></script>
+  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script type='text/javascript' src="js/assignment8.js"></script>
+  <script>
+
+    $( document ).ready(function() {
+        load_scrabble_pieces();     
+        load_droppable_targets();   
+    });
+  </script>
+
+</body>
+</html>
