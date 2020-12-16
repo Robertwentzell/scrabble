@@ -88,23 +88,23 @@ function restart() {
 }
 
 function newTiles() {
-    if (document.getElementById('messages').innerHTML === "You have submitted a correct word! Congratulations.") {
+    if (document.getElementById('messages').innerHTML === "valid word") {
         score += parseInt(document.getElementById('score').innerHTML);
         document.getElementById('totalscore').innerHTML = "Total score: " + score;
         restart();
     } else {
-        alert("Please submit a valid word and try again");
+        alert("invalid word");
     }
 
 }
 
 function continuePlaying() {
-    if (document.getElementById('messages').innerHTML === "You have submitted a correct word! Congratulations.") {
+    if (document.getElementById('messages').innerHTML === "valid word") {
         score += parseInt(document.getElementById('score').innerHTML);
         document.getElementById('totalscore').innerHTML = "Total score: " + score;
         populateBoard();
     } else {
-        alert("Please submit a valid word and try again");
+        alert("invalid word");
     }
 }
 
